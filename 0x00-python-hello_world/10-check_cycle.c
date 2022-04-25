@@ -6,13 +6,17 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *aux = list;
+	listint_t *aux;
 
-	while (aux)
+	if (list)
 	{
-		aux = aux->next;
-		if (aux == list)
-			return (1);
+		aux = list;
+		while (aux)
+		{
+			aux = aux->next;
+			if (aux == list)
+				return (1);
+		}
 	}
 
 	return (0);
