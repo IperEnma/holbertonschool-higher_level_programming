@@ -13,10 +13,10 @@ int check_cycle(listint_t *list)
 		fast = list;
 		while (list)
 		{
-			list = list->next;
 			if (!fast->next->next)
 				break;
 			fast = fast->next->next;
+			list = list->next;
 			if (fast == list)
 				return (1);
 		}
