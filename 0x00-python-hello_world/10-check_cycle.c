@@ -6,7 +6,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *fast;
+	listint_t *fast, *control = list;
 
 	if (list)
 	{
@@ -18,6 +18,8 @@ int check_cycle(listint_t *list)
 			fast = fast->next->next;
 			list = list->next;
 			if (fast == list)
+				return (1);
+			if (list == control)
 				return (1);
 		}
 	}
