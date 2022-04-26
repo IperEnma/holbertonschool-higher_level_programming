@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
+if number == 0:
+    print("Last digit of 0 is 0 and is 0")
 if (number/abs(number))*(abs(number) % 10) > 5:
     print(f"Last digit of {number}\
  is {int(number/abs(number))*(abs(number) % 10)}\
