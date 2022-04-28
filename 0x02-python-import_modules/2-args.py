@@ -8,5 +8,5 @@ if __name__ == "__main__":
     else:
         print(f"{t - 1} argument:")
         for x in range(1, t):
-            print(f"{i} = {sys.argv[i]}")
+            print(f"{i}: {sys.argv[i]}")
             i = i + 1
