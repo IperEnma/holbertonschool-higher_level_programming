@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 import subprocess
-subprocess.run('echo "#pythoniscool"', shell=True)
+subprocess.call('echo "#pythoniscool"', shell=True)
