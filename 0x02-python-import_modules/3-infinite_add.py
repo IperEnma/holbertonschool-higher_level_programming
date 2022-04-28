@@ -7,8 +7,9 @@ if __name__ == "__main__":
     if (t == 2):
         print(f"{sys.argv[1]}")
     elif (t > 1):
-        for x in (1, t):
+        for x in range(1, t):
             resultado += int(sys.argv[i])
+            i = i + 1
         print(f"{resultado}")
     else:
         print("0")
