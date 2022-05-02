@@ -21,6 +21,7 @@ int is_palindrome(listint_t **head)
 		aux = aux->next;
 		count++;
 	}
+	count--;
 	for (count2 = 0; count2 < count; count2++, count--)
 	{
 		if (compare[count] != compare[count2])
