@@ -6,3 +6,4 @@ def print_reversed_list_integer(my_list=[]):
         for x in range(-1, (size - 1)):
             print(my_list[count])
             count = count - 1
+    return None
