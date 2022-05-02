@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- *
+ * 
  *
  */
 void addnode(listint_t **head, int n)
@@ -40,5 +40,6 @@ int is_palindrome(listint_t **head)
 		aux = aux->next;
 		newaux = newaux->next;
 	}
+	free_listint(new);
 	return (1);
 }
