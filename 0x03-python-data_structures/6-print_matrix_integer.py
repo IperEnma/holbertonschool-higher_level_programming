@@ -5,8 +5,8 @@ def print_matrix_integer(matrix=[[]]):
             count = 0
             for y in x:
                 if (count != 2):
-                    print(f"{y} ", end='')
+                    print("{:d} ".format(y), end='')
                 else:
-                    print(f"{y}", end='')
+                    print(f"{:d}".format(y), end='')
                 count = count + 1
             print("")
