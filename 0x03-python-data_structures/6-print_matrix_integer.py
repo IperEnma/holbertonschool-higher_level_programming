@@ -9,4 +9,4 @@ def print_matrix_integer(matrix=[[]]):
                 else:
                     print((y), end='')
                 count = count + 1
-            print("")
+            print()
