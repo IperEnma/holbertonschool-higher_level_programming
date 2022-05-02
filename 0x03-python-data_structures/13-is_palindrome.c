@@ -25,7 +25,7 @@ int is_palindrome(listint_t **head)
 	listint_t *aux = *head;
 	listint_t *newaux = NULL;
 	if (*head == NULL)
-		return (0);
+		return (1);
 	while(aux)
 	{
 		addnode(&new, aux->n);
