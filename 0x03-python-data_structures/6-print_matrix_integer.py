@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    if (not(matrix == [[]])):
+    if (matrix == [[]]):
+        print()
+    else:
         for x in matrix:
             count = 0
             for y in x:
@@ -10,5 +12,3 @@ def print_matrix_integer(matrix=[[]]):
                     print((y), end='')
                 count = count + 1
             print()
-    else:
-        print()
