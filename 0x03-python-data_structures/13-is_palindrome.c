@@ -36,7 +36,10 @@ int is_palindrome(listint_t **head)
 	while (aux && newaux)
 	{
 		if (aux->n != newaux->n)
+		{
+			free(new);
 			return (0);
+		}
 		aux = aux->next;
 		newaux = newaux->next;
 	}
