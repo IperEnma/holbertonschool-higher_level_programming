@@ -7,7 +7,7 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int compare[1080], count = 0, count2 = 0;
+	int compare[3000], count = 0, count2 = 0;
 	listint_t *aux;
 
 	if (*head == NULL || (*head)->next == NULL)
