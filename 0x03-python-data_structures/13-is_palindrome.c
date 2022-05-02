@@ -1,48 +1,30 @@
 #include "lists.h"
+#include <stdio.h>
 /**
- * 
- *
- */
-void addnode(listint_t **head, int n)
-{
-	listint_t *new = NULL;
-
-	new = malloc(sizeof(listint_t));
-	if (new)
-	{
-		new->n = n;
-		new->next = *head;
-		*head = new;
-	}
-}
-/**
- *
- *
+ * is_palindrome - is or not palindrome
+ * @head: first node
+ * Return: 1 palindrome, 0 not palindrome
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *new = NULL;
-	listint_t *aux = *head;
-	listint_t *newaux = NULL;
+	int compare[1080], count = 0, count2 = 0;
+	listint_t *aux;
+
 	if (*head == NULL)
 		return (1);
-	while(aux)
-	{
-		addnode(&new, aux->n);
-		aux = aux->next;
-	}
+
 	aux = *head;
-	newaux = new;
-	while (aux && newaux)
+
+	while (aux)
 	{
-		if (aux->n != newaux->n)
-		{
-			free(new);
-			return (0);
-		}
+		compare[count] = aux->n;
 		aux = aux->next;
-		newaux = newaux->next;
+		count++;
 	}
-	free_listint(new);
+	for (count2 = 0; count2 < count; count2++, count--)
+	{
+		if (compare[count] != compare[count2])
+			return (0);
+	}
 	return (1);
 }
