@@ -8,8 +8,8 @@ void print_python_list_info(PyObject *p)
 
 	list = (PyListObject *)p;	
 	size = PyList_Size(p);
-	printf("[*] Allocated = %ld\n", list->allocated);
 	printf("[*] Size of the Python List = %d\n", size);
+	printf("[*] Allocated = %ld\n", list->allocated);
 	for (i = 0; i < size; i++)
 	{
 		structobject = list->ob_item[i];
