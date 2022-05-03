@@ -1,5 +1,4 @@
-#include "object.h"
-#include "listobject.h"
+#include "python.h"
 void print_python_list_info(PyObject *p)
 {
 	int size = 0, i = 0;
