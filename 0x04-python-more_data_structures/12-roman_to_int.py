@@ -20,7 +20,7 @@ def roman_to_int(roman_string):
     for x in roman_string:
         for key, value in roman_dictionary.items():
             if x == key:
-                if save < value and x != 'V' and x != 'L' and x != 'D':
+                if save < value and x != 'V' and x != 'L' and x != 'D' and x != 'M':
                     result = value - result
                 else:
                     result = result + value
