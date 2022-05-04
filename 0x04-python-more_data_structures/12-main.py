@@ -27,5 +27,14 @@ print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 roman_number = None
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
-roman_number = ""
-print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+#roman_number = ""
+#print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+#roman_number = "MDCCVII"
+#print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+#roman_number = "CMXCIX"
+#print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+#roman_number = "MMMCMXCIX"
+#print("{} = {}".format(roman_number, roman_to_int(roman_number)))
