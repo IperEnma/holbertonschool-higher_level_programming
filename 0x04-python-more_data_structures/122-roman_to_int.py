@@ -15,16 +15,16 @@ def roman_to_int(roman_string):
             'CD': 400,
             'D': 500,
             'M': 1000}
-    sig = 0
     result = 0
-    numbers = []
+    save = 0
+    x2 = ""
     for x in roman_string:
         for key, value in roman_dictionary.items():
             if x == key:
-                numbers.append(value)
-    for actual, sig in zip(numbers, numbers[1:]):
-        if actual >= sig:
-            result += actual
-        else:
-            result -= actual
-    return result + sig
+                if (save < value and x2 != 'V' and x2 != 'L' and x2 != 'D' and x2 != 'M' and x2 != 'X' and x2 != 'XL' and x2 != 'XC' and x2 != 'C' and x2 != 'CD'):
+                    result = value - result
+                else:
+                    result = result + value
+                save = value
+                x2 = x
+    return result
