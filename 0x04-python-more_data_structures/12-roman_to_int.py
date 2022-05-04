@@ -22,6 +22,8 @@ def roman_to_int(roman_string):
         for key, value in roman_dictionary.items():
             if x == key:
                 numbers.append(value)
+    if (len(numbers) == 1):
+        return (numbers[0])
     for actual, sig in zip(numbers, numbers[1:]):
         if actual >= sig:
             result += actual
