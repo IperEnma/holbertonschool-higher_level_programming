@@ -17,12 +17,14 @@ def roman_to_int(roman_string):
             'M': 1000}
     result = 0
     save = 0
+    x2 = ""
     for x in roman_string:
         for key, value in roman_dictionary.items():
             if x == key:
-                if save < value and x != 'V' and x != 'L' and x != 'D' and x != 'M':
+                if (save < value and x2 != 'V' and x2 != 'L' and x2 != 'D' and x2 != 'M' and x2 != 'X' and x2 != 'XL' and x2 != 'XC' and x2 != 'C' and x2 != 'CD'):
                     result = value - result
                 else:
                     result = result + value
                 save = value
+                x2 = x
     return result
