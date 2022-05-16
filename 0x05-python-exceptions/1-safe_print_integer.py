@@ -3,6 +3,7 @@ def safe_print_integer(value):
     try:
         validator = vale / 2
         print("{:d}".format(value))
-        return(True)
+        status = True
     except:
-        return(False)
+        status = False
+    return status
