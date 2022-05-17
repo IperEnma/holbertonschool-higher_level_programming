@@ -6,8 +6,8 @@ class Square:
     """define classs"""
     def __init__(self, size=0, position=(0, 0)):
         """initialize class"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """calculating area"""
