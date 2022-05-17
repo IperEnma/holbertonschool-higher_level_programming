@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """create class"""
 
+
 class Square:
     """define classs"""
     def __init__(self, size=0, position=(0, 0)):
         """initialize class"""
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """calculating area"""
@@ -46,10 +47,10 @@ class Square:
 
     def my_print(self):
         """print square"""
-        if self.size == 0:
+        if self.__size == 0:
             print()
         else:
-            position = self.position
+            position = self.__position
             if position[1] > 0:
                 for i in range(position[1]):
                     print()
