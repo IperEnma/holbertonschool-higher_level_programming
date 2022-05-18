@@ -9,6 +9,7 @@ class Rectangle:
     """counter"""
 
     print_symbol = '#'
+    """initialize symbol"""
 
     def __init__(self, width=0, height=0):
         """initialize the class"""
