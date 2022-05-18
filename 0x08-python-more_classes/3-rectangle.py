@@ -36,7 +36,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise TypeEroor("height must be an integer")
+            raise TypeError("height must be an integer")
         else:
             self.__height = value
 
@@ -52,7 +52,7 @@ class Rectangle:
     def __str__(self):
         string = ""
         count = 0
-        if self__height == 0 or self.__width == 0:
+        if self.__height == 0 or self.__width == 0:
             return string
         for x in range(self.__height):
             for y in range(self.__width):
