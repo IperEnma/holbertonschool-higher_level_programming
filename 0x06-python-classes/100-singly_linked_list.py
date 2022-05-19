@@ -14,6 +14,7 @@ class Node():
     def data(self):
         """getter data(int)"""
         return self.__data
+
     @data.setter
     def data(self, value):
         """setter data(int)"""
@@ -26,28 +27,28 @@ class Node():
     def next_node(self):
         """getter node"""
         return self.__next_node
+
     @next_node.setter
     def next_node(self, value):
         """setter node"""
-        if value != None and type(value) != Node:
+        if value is not None and type(value) != Node:
             raise TypeError("next_node must be a Node object")
         else:
-            self.__next_node = value 
+            self.__next_node = value
 
 
-class SinglyLinkedList():
+class SinglyLinkedList:
     """class for linked list"""
-
 
     def __init__(self):
         """initialize pointer to first node"""
-        self.__head = None 
+        self.__head = None
 
     def sorted_insert(self, value):
         """insert nodes in the list sorted"""
         current = self.__head
         new = Node(value)
-        if current == None:
+        if current is None:
             self.__head = new
         elif current.data >= new.data:
             new.next_node = self.__head
@@ -66,6 +67,6 @@ class SinglyLinkedList():
         while current:
             string = string + str(current.data)
             if current.next_node:
-                    string = string + "\n"
+                string = string + "\n"
             current = current.next_node
         return string
