@@ -1,0 +1,122 @@
+"""
+this is a doctest to test a module that receives a matrix and divides each of its elements
+
+The example module supplies one function, matrix_divided().  For example,
+
+">>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]"
+
+"""
+
+IMPORTING MODULE
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided 
+
+IMPORTING FUNCTION
+	>>> module = __import__('2-matrix_divided')
+
+CHECKING DOC MODULE
+	>>> len(module.__doc__) > 1
+	True
+
+CHECKING DOC FUNCTION
+	>>> len(matrix_divided.__doc__) > 1
+	True
+
+INITIALIZE MATRIX EMPTY
+	>>> matrix = []
+
+CHECKING WITH MATRIX EMPTY
+	>>> print(matrix_divided(matrix, 3))
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+INITIALIZE MATRIX DIFFERENT SIZE
+	>>> matrix = [[1, 2, 4], [1, 2, 3 ,5]]
+
+CHECKING WITH MATRIX DIFFERENT SIZE
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+INITIALIZE MATRIX WITH STRINGS
+	>>> matrix = [["a", "b"], ["a", "b"]]
+
+CHECKING WITH MATRIX STRINGS
+	>>> matrix_divided(matrix, float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+INITIALIZE MATRIX(INTEGERS) SAME SIZE
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+CHECKING WITH VERY LARGE DIVIDER
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+CHECKING CASE BASIC
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+CHECKING CALL WITH TWO INTEGERS
+	>>> matrix_divided(2, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+CHECKING CALL WITH AN BOOLEANO AND A INTEGER
+	>>> matrix_divided(False, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+CHECKING CALL WITH A MATRIX AND A BOOLEANO
+	>>> matrix_divided(matrix, False)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+CHECKING WTH STRING AND INTEGER
+	>>> matrix_divided("", 2)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+CHECKING WITH MATRIX AND STRING
+	>>> matrix_divided(matrix, "hola")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+CHECKING WITH DIV 0
+	>>> matrix_divided(matrix, 0)
+        Traceback (most recent call last):
+        ...
+        ZeroDivisionError: division by zero
+	
+Checking for more than 2 args:
+	 >>> matrix_divided(matrix, 1, 3)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+CHECKING NONE AND NONE
+	>>> matrix_divided(None, None)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+CHECKING MATRIX AND NONE
+	>>> matrix_divided(matrix, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
+CHECKING NONE AND MATRIX
+	>>> matrix_divided(None, matrix)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+

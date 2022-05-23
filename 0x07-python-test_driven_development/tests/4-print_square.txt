@@ -1,0 +1,83 @@
+"""
+this is a doctest to test a module that prints a square
+
+The example module supplies one function, print_square().  For example,
+
+">>> print_square(3)
+###
+###
+###"
+"""
+
+IMPORTING FUNCTION
+	>>> print_square = __import__('4-print_square').print_square
+
+CHECKING BASIC CASE
+	>>> print_square(3)
+	###
+	###
+	###
+
+CHECKING BASIC CASE
+	>>> print_square(8)
+	########
+	########
+	########
+	########
+	########
+	########
+	########
+	########
+
+IMPORTING MODULE
+	>>> module = __import__('4-print_square')
+
+CHECKING DOC MODULE
+	>>> len(module.__doc__) > 1
+	True
+
+CHECKING DOC FUNCTION
+	>>> len(print_square.__doc__) > 1
+	True
+
+CHECKING EMPTY STRING
+	>>> print_square("")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+CHECKING FLOAT
+	>>> print_square(3.5)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+CHECKING NUMBER NEGATIVE
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+CHECKING MORE ARGS
+	>>> print_square(1, 2)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_square() takes 1 positional argument but 2 were given
+
+CHECKING NONE
+	>>> print_square(None)
+	 Traceback (most recent call last):
+         ...
+         TypeError: size must be an integer
+
+CHECKING BOOLEANO
+	>>> print_square(True)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+CHECKING TWO INTEGER
+	>>> print_square((4, 2))
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer

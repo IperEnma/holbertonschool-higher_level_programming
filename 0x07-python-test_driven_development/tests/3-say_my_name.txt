@@ -1,0 +1,88 @@
+"""
+this is a doctest to test a module that prints first and last name
+
+The example module supplies one function, say_my_name().  For example,
+
+">>> factorial(5)
+120"
+"""
+
+IMPORTING FUNCTION
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+IMPORTING MODULE
+	>>> module = __import__('3-say_my_name')
+
+CHECKING DOC MODULE
+	>>> len(module.__doc__) > 1
+	True
+
+CHECKING DOC FUNCTION
+	>>> len(say_my_name.__doc__) > 1
+	True
+
+CHECKING CASE BASIC
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+CHECKING NONE
+	>>> say_my_name(None, None)
+	Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+CHECKING NONE AND STRING
+	>>> say_my_name(None, "ENmanuel")
+	Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+CHECKING STRING AND NONE
+	>>> say_my_name("ENmanuel", None)
+	Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+CHECKING STRING AN INTEGER
+	>>> say_my_name("John", 2)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+CHECKING INTEGER AND STRING
+	>>> say_my_name(2, "Mauro")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+CHECKING TWO INTEGER
+	>>> say_my_name(2, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+CHECKING STRING EMPTY
+	>>> say_my_name("")
+	My name is  
+
+CHECKING TWO STRING EMPTY
+	>>> say_my_name("", "")
+	My name is  
+
+CHECKING TWO BOOLEANOS 
+	>>> say_my_name(True, False)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+CHECKING TWO BOOLEANOS
+	>>> say_my_name(False, True)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Checking mor 2 args:
+	 >>> say_my_name("school", "holberton", "test")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
