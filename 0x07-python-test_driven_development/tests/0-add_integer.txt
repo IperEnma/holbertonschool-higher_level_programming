@@ -52,6 +52,10 @@ CHECKING CALL VOID
 	TypeError: add_integer() missing 1 required positional argument: 'a'
 
 CHECKING SUM INTEGER AND EMPTY
+        >>> add_integer(2)
+        100
+
+CHECKING SUM INTEGER AND EMPTY
 	>>> add_integer(2, )
 	100
 
@@ -111,5 +115,11 @@ CHECKING PASS TUPLE
 CHECKING NONE
 	>>> add_integer(None)
 	Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+CHECKING NONE NONE
+        >>> add_integer(None, None)
+        Traceback (most recent call last):
         ...
         TypeError: a must be an integer

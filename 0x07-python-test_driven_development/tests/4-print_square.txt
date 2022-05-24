@@ -60,15 +60,15 @@ CHECKING NUMBER NEGATIVE
 
 CHECKING MORE ARGS
 	>>> print_square(1, 2)
-	 Traceback (most recent call last):
-	 ...
-	 TypeError: print_square() takes 1 positional argument but 2 were given
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() takes 1 positional argument but 2 were given
 
 CHECKING NONE
 	>>> print_square(None)
-	 Traceback (most recent call last):
-         ...
-         TypeError: size must be an integer
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
 
 CHECKING BOOLEANO
 	>>> print_square(True)
@@ -81,3 +81,11 @@ CHECKING TWO INTEGER
 	Traceback (most recent call last):
 	...
 	TypeError: size must be an integer
+
+ CHECKING is 0
+	>>> print_square(0)
+
+CHECKING <  0
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0

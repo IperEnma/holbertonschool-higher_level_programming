@@ -1,6 +1,7 @@
 #!usr/bin/python3
 """module with function that prints a text"""
 
+
 def text_indentation(text):
     """function that prints a text"""
 
