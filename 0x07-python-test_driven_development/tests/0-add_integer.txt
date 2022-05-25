@@ -25,6 +25,10 @@ CHECKING NEGATIVE SUM
 	>>> add_integer(1, -2)
 	-1
 
+CHECKING CASTING
+	>>> add_integer(int(2), int(2))
+	4
+
 CHECKING BASIC SUM
 	>>> add_integer(2, 3)
 	5
