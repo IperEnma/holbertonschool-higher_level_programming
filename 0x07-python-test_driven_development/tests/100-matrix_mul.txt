@@ -14,6 +14,14 @@ CHECKING DIFERENT SIZE
     ...
     TypeError: each row of m_b must be of the same size
 
+    >>> matrix_mul([[1, 2], [3, 4, 4]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+    ...
+    TypeError: each row of m_a must be of the same size
+
+    >>> matrix_mul([[1, 2, 4], [3, 5 ,6]], [[1,2], [3, 4]])
+    [[7, 10, 0], [18, 26, 0]]
+
     >>> matrix_mul([[1, 2], [3, 4], [3,4]], [[1, 2, 1], [3, 4, 2]])
     Traceback (most recent call last):
     ...
@@ -29,3 +37,32 @@ CHECKING NO LIST
     Traceback (most recent call last):
     ...
     TypeError: m_a must be a list of lists
+
+    >>> matrix_mul([[5, 6], [7, 8]], [1, 2, 3, 4])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list of lists
+
+CHECKING LIST EMPTY
+    >>> matrix_mul([[]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+    >>> matrix_mul([[5, 6], [7, 8]], [[]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+CHECKING ELEMENT NO INT
+    >>> matrix_mul([[6, "6"], [7, 8]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a should contain only integers or floats
+
+    >>> matrix_mul([[6, 6], [7, 8]], [[5, "6"], [7, 8]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b should contain only integers or floats
+
+CHECKING DIFERENT SIZE LIST
