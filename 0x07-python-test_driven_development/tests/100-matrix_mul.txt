@@ -86,19 +86,3 @@ CHECKING ELEMENT NO INT
     Traceback (most recent call last):
     ...
     TypeError: m_b should contain only integers or floats
-
-CHECKING DIFERENT ARGUMENTS
-    >>> matrix_mul()
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
-
-    >>> matrix_mul([[1, 2], [3, 4]])
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
-
-    >>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]], [[9, 10], [11, 12]])
-    Traceback (most recent call last):
-    ...
-    TypeError: matrix_mul() takes 2 positional arguments but 3 were given
