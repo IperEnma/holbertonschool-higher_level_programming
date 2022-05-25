@@ -21,6 +21,10 @@ CHECKIGN DOC FUNCTION
 	>>> len(module.__doc__) > 1
 	True
 
+CHECKING NEGATIVE SUM
+	>>> add_integer(1, -2)
+	-1
+
 CHECKING BASIC SUM
 	>>> add_integer(2, 3)
 	5
