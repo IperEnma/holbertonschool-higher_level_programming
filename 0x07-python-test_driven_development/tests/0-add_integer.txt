@@ -137,3 +137,9 @@ CHECKING INF
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
+
+CHECKING NaN
+        >>> add_integer('NaN', 'NaN')
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
