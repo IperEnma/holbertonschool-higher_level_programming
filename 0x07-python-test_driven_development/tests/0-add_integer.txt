@@ -131,3 +131,9 @@ CHECKING NONE NONE
         Traceback (most recent call last):
         ...
         TypeError: a must be an integer
+
+CHECKING INF
+	>>> add_integer('inf', 'inf')
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
