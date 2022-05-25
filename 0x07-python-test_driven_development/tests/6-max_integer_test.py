@@ -63,14 +63,11 @@ class TestMaxInteger(unittest.TestCase):
     def test_int_char(self):
         self.assertRaises(TypeError, max_integer, [2j, 3, 5])
 
-<<<<<<< HEAD
     def test_empty(self):
         self.assertRaises(TypeError, max_integer, None)
 
-=======
     def test_middle(self):
         self.assertEqual(max_integer([1, 4, 1]), 4)
->>>>>>> be985c53b121f6b525539b3cb4ea95e2cee0aaa1
 
 if __name__ == '__main__':
     """function main"""
