@@ -1,6 +1,16 @@
 CHECKING IMPORTE MODULE
     >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
+CHECKING DOCSTRING FUNCTION
+    >>> len(matrix_mul.__doc__) > 1
+    True
+
+CHECKING DOCTRING MODULE
+    >>> module = __import__('100-matrix_mul')
+
+    >>> len(module.__doc__) > 1
+    True
+
 CHECKING BASIC CASE
     >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
     [[7, 10], [15, 22]]
