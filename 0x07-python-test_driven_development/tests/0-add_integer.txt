@@ -133,16 +133,16 @@ CHECKING NONE NONE
         TypeError: a must be an integer
 
 CHECKING INF
-	>>> add_integer('inf', 'inf')
+	>>> add_integer(float('inf'), 2)
 	Traceback (most recent call last):
 	...
-	TypeError: a must be an integer
+	OverflowError: cannot convert float infinity to integer
 
 CHECKING NaN
-        >>> add_integer('NaN', 'NaN')
+        >>> add_integer(float('NaN'), float('NaN'))
         Traceback (most recent call last):
         ...
-        TypeError: a must be an integer
+        ValueError: cannot convert float NaN to integer
 
 CHECKING MISSING TWO ARGUMENT
 	>>> add_integer()
