@@ -87,7 +87,7 @@ CHECKING AREA FAIL
         ...
 	TypeError: area() takes 1 positional argument but 2 were given
 
-CHECKING LIST
+CHECKING DICT
 	>>> bg.integer_validator("dict", {"key": "value"})
 	Traceback (most recent call last):
         ...
@@ -104,3 +104,9 @@ CHECKING MANY ARGMENTS
 	Traceback (most recent call last):
         ...
 	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+CHECKING LIST
+	>>> bg.integer_validator("list", [1, 2])
+	Traceback (most recent call last):
+        ...
+        TypeError: list must be an integer
