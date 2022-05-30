@@ -5,9 +5,6 @@
 class MyList(list):
     """class list"""
 
-    def __init__(self):
-        """initialize function"""
-        super().__init__()
 
     def print_sorted(self):
         """function with class that inherits"""
