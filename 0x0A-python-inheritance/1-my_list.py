@@ -2,7 +2,7 @@
 """class that inherits"""
 
 
-class MyList:
+class list:
     """define class"""
 
     def __init__(self):
@@ -21,7 +21,7 @@ class MyList:
     def __str__(self):
         return str(self.__lista)
 
-"""class MyList(list):
+class MyList(list):
 
     def __init__(self):
-        super().__init__()"""
+        super().__init__()
