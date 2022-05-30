@@ -92,3 +92,15 @@ CHECKING LIST
 	Traceback (most recent call last):
         ...
         TypeError: dict must be an integer
+
+CHECKING SET
+	>>> bg.integer_validator("set", {"hello", "world"})
+        Traceback (most recent call last):
+        ...
+        TypeError: set must be an integer
+
+CHECKING MANY ARGMENTS
+	>>> bg.integer_validator("more", 1, 2)
+	Traceback (most recent call last):
+        ...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
