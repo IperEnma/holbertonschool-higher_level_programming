@@ -3,6 +3,7 @@
 
 
 class BaseGeometry:
+    """class basegeometry"""
 
     def area(self):
         """instance in building"""

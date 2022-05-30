@@ -2,26 +2,14 @@
 """class that inherits"""
 
 
-class list:
-    """define class"""
+class MyList(list):
+    """class list"""
 
     def __init__(self):
-        """initialize class"""
-        self.__lista = []
-
-    def append(self, num):
-        """add element"""
-        self.__lista.append(num)
+        """initialize function"""
+        super().__init__()
 
     def print_sorted(self):
         """function with class that inherits"""
-        sorted_list = sorted(self.__lista)
+        sorted_list = sorted(self)
         print(sorted_list)
-
-    def __str__(self):
-        return str(self.__lista)
-
-class MyList(list):
-
-    def __init__(self):
-        super().__init__()

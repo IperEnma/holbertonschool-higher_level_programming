@@ -3,6 +3,7 @@
 
 base = __import__("9-rectangle").Rectangle
 
+
 class Square(base):
     """define class"""
 
