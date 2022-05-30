@@ -77,3 +77,6 @@ CHECKING NO INT
 	Traceback (most recent call last):
 	...
 	TypeError: test must be an integer
+
+CHECKINH EMPTY STRING
+	>>> bg.integer_validator("", 1)
