@@ -60,5 +60,8 @@ CHECKING EMPTY
 	...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-CHECKING NAME EMPTY
-	>>> bg.integer_validator("", 2)	
+CHECKING None
+	>>> bg.integer_validator(None, None)
+	Traceback (most recent call last):
+	...
+	TypeError: None must be an integer
