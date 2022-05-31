@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""module with class"""
-
-import json
+"""module with class to json description"""
 
 
 def class_to_json(obj):
