@@ -20,4 +20,3 @@ def pascal_triangle(n):
         lists.append(temp_list)
         aux = temp_list[:]
     return lists
-
