@@ -5,6 +5,6 @@ import json
 
 
 def class_to_json(obj):
-    """class to json"""
+    """class to json list, dictionary, string, int, bool"""
 
     return (obj.__dict__)
