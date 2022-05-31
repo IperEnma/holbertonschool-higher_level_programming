@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """module with class student"""
 
+
 class Student:
     """class student"""
 
@@ -26,4 +27,3 @@ class Student:
                     if x == key:
                         dict_dest.update({key: value})
             return (dict_dest)
-
