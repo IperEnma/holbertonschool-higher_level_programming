@@ -3,7 +3,6 @@
 
 import io
 from contextlib import redirect_stdout
-import sys
 import unittest
 from models.rectangle import Rectangle
 
@@ -131,6 +130,3 @@ class TestRectangleClass(unittest.TestCase):
         with redirect_stdout(io.StringIO()) as buff:
             print(self.instance)
         self.assertEqual(buff.getvalue(), "[Rectangle] (89) 1/3 - 4/2\n")
-
-
-
