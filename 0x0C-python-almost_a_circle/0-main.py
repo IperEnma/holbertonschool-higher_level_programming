@@ -18,3 +18,8 @@ if __name__ == "__main__":
 
     b5 = Base()
     print(b5.id)
+
+    print("************")
+    print("ENMA TEST")
+    print("*********")
+    print(f"docstring: {len(Base().__doc__)}")
