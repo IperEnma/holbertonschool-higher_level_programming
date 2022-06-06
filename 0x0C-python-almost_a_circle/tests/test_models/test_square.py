@@ -21,7 +21,7 @@ class SquareTest(unittest.TestCase):
         with redirect_stdout(io.StringIO()) as buff:
             self.instance1.display()
         self.assertEqual(buff.getvalue(), (("#" * 5) + "\n") * 5)
-        self.assertEqual(_str.getvalue(), "[Square] (1) 0/0 - 5\n")
+        self.assertEqual(_str.getvalue(), "[Square] (5) 0/0 - 5\n")
         self.assertEqual(self.instance1.area(), 25)
 
         with redirect_stdout(io.StringIO()) as _str:
@@ -29,7 +29,7 @@ class SquareTest(unittest.TestCase):
         with redirect_stdout(io.StringIO()) as buff:
             self.instance2.display()
         self.assertEqual(buff.getvalue(), ("  " + ("#" * 2) + "\n") * 2)
-        self.assertEqual(_str.getvalue(), "[Square] (2) 2/0 - 2\n")
+        self.assertEqual(_str.getvalue(), "[Square] (6) 2/0 - 2\n")
         self.assertEqual(self.instance2.area(), 4)
 
         with redirect_stdout(io.StringIO()) as _str:
@@ -37,7 +37,7 @@ class SquareTest(unittest.TestCase):
         with redirect_stdout(io.StringIO()) as b:
             self.instance3.display()
         self.assertEqual(b.getvalue(), "\n\n\n" + (" " + ("#" * 3) + "\n") * 3)
-        self.assertEqual(_str.getvalue(), "[Square] (3) 1/3 - 3\n")
+        self.assertEqual(_str.getvalue(), "[Square] (7) 1/3 - 3\n")
         self.assertEqual(self.instance3.area(), 9)
 
     def test_size(self):
@@ -105,7 +105,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(
                 self.instance2.to_dictionary(),
                 {
-                    'id': 2,
+                    'id': 6,
                     'size': 2,
                     'x': 2,
                     'y': 0
@@ -114,7 +114,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(
                 self.instance3.to_dictionary(),
                 {
-                    'id': 3,
+                    'id': 7,
                     'size': 3,
                     'x': 1,
                     'y': 3
