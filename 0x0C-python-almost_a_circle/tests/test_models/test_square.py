@@ -6,6 +6,7 @@ from contextlib import redirect_stdout
 import unittest
 from models.square import Square
 
+
 class test_square(unittest.TestCase):
     """class test Square class"""
 
@@ -33,9 +34,9 @@ class test_square(unittest.TestCase):
 
         with redirect_stdout(io.StringIO()) as _str:
             print(self.instance3)
-        with redirect_stdout(io.StringIO()) as buff:
+        with redirect_stdout(io.StringIO()) as b:
             self.instance3.display()
-        self.assertEqual(buff.getvalue(), "\n\n\n" + (" " + ("#" * 3) + "\n") * 3)
+        self.assertEqual(b.getvalue(), "\n\n\n" + (" " + ("#" * 3) + "\n") * 3)
         self.assertEqual(_str.getvalue(), "[Square] (3) 1/3 - 3\n")
         self.assertEqual(self.instance3.area(), 9)
 
@@ -101,7 +102,21 @@ class test_square(unittest.TestCase):
 
     def test_to(self):
         """test to_dictionary square"""
-        self.assertEqual(self.instance2.to_dictionary(), {'id': 2, 'size': 2, 'x': 2, 'y': 0})
+        self.assertEqual(
+                self.instance2.to_dictionary(),
+                {
+                    'id': 2,
+                    'size': 2,
+                    'x': 2,
+                    'y': 0
+                })
         self.assertEqual(type(self.instance2.to_dictionary()), dict)
-        self.assertEqual(self.instance3.to_dictionary(), {'id': 3, 'size': 3, 'x': 1, 'y': 3})
+        self.assertEqual(
+                self.instance3.to_dictionary(),
+                {
+                    'id': 3,
+                    'size': 3,
+                    'x': 1,
+                    'y': 3
+                })
         self.assertEqual(type(self.instance3.to_dictionary()), dict)

@@ -57,7 +57,7 @@ class test_rectangle(unittest.TestCase):
 
         with redirect_stdout(io.StringIO()) as buff:
             self.instance2.display()
-        self.assertEqual(buff.getvalue(), (("#" * 2) +"\n") * 2)
+        self.assertEqual(buff.getvalue(), ((("#") * (2)) + ("\n")) * (2))
 
     def test_str(self):
         """test overriding the __str__"""
@@ -74,11 +74,12 @@ class test_rectangle(unittest.TestCase):
         """test display representation with characters '#' plus position"""
         with redirect_stdout(io.StringIO()) as buff:
             self.instance4.display()
-        self.assertEqual(buff.getvalue(), (" " + ("#" * 5) +"\n") * 5)
+        self.assertEqual(buff.getvalue(), (" " + ("#" * 5) + "\n") * (5))
 
         with redirect_stdout(io.StringIO()) as buff:
             self.instance6.display()
-        self.assertEqual(buff.getvalue(), "\n\n" + ("  " + ("#" * 2) +"\n") * 3)
+        self.assertEqual(buff.getvalue(), "\n\n" + (("  ")
+                                                    + ("#" * 2) + "\n") * (3))
 
     def test_update_0(self):
         """test method update"""
@@ -133,7 +134,23 @@ class test_rectangle(unittest.TestCase):
 
     def test_to_dictionary(self):
         """test metho to_dictionary"""
-        self.assertEqual(self.instance6.to_dictionary(), {'id': 4, 'width': 2, 'height': 3, 'x': 2, 'y': 2})
+        self.assertEqual(
+                self.instance6.to_dictionary(),
+                {
+                    'id': 4,
+                    'width': 2,
+                    'height': 3,
+                    'x': 2,
+                    'y': 2
+                })
         self.assertEqual(type(self.instance6.to_dictionary()), dict)
-        self.assertEqual(self.instance5.to_dictionary(), {'id': 12, 'width': 4, 'height': 6, 'x': 2, 'y': 1})
+        self.assertEqual(
+                self.instance5.to_dictionary(),
+                {
+                    'id': 12,
+                    'width': 4,
+                    'height': 6,
+                    'x': 2,
+                    'y': 1
+                })
         self.assertEqual(type(self.instance5.to_dictionary()), dict)
