@@ -65,6 +65,9 @@ class Base:
                 my_dict = json.load(f)
         except Exception:
             return my_list
+
+        my_dict_string = json.dumps(my_dict)
+        my_dict = cls.from_json_string(my_dict_string)
         for dict_ in my_dict:
             my_list.append(cls.create(**dict_))
         return my_list
