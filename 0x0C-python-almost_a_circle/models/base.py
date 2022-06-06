@@ -19,7 +19,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """returns the JSON string representation of list_dictionaries"""
-        if list_dictionaries == None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
         return json.dumps(list_dictionaries)
 
@@ -38,7 +38,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
-        if json_string == None or len(json_string) == 0:
+        if json_string is None or len(json_string) == 0:
             return "[]"
         return json.loads(json_string)
 
@@ -48,6 +48,7 @@ class Base:
         new = cls(1, 2)
         new.update(**dictionary)
         return(new)
+
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
