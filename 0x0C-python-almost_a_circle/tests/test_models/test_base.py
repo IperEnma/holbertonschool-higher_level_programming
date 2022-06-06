@@ -21,7 +21,7 @@ class BaseTest(unittest.TestCase):
         base2 = Base()
         self.assertEqual(base2.id, 9)
 
-     def test_stringed_id(self):
+    def test_stringed_id(self):
         """String id"""
         a = Base("Papurri")
         self.assertEqual(a.id, "Papurri")
