@@ -92,7 +92,7 @@ class Rectangle(Base):
     def __str__(self):
         """rewriting method __str__"""
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
-                - {self.__width}/{self.__height}"
+ - {self.__width}/{self.__height}"
 
     """update"""
 
