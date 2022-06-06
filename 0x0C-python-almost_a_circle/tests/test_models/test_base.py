@@ -39,7 +39,7 @@ class TestBaseClass(unittest.TestCase):
 
         with redirect_stdout(io.StringIO()) as buff:
             print(self.json_dictionary)
-        self.assertEqual(buff.getvalue(), '[{"id": 6, "width": 10, "height": 7, "x": 2, "y": 8}]\n')
+        self.assertEqual(buff.getvalue(), '[{"id": 10, "width": 10, "height": 7, "x": 2, "y": 8}]\n')
         self.assertEqual(type(buff.getvalue()), str)
 
     def test_save_to_file(self):
@@ -50,7 +50,7 @@ class TestBaseClass(unittest.TestCase):
 
         with open("Rectangle.json") as f:
             self.read = f.read()
-        self.assertEqual(self.read, '[{"id": 4, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 5, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        self.assertEqual(self.read, '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]')
 
     def test_from_json_string(self):
         """checking from json string"""
@@ -78,6 +78,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(_str.getvalue(), "[{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}]\n")
 
     def test_create(self):
+        """test create checking"""
         self.r3 = Rectangle(3, 5, 1)
         self.r3_dictionary = self.r3.to_dictionary()
         self.r4 = Rectangle.create(**self.r3_dictionary)
@@ -94,4 +95,30 @@ class TestBaseClass(unittest.TestCase):
         compare = self.r3 == self.r4
         self.assertEqual(compare, False)
 
+    def test_load_from_file(self):
+        """test create instance from file"""
+        self.r1 = Rectangle(10, 7, 2, 8)
+        self.r2 = Rectangle(2, 4)
+        self.list_rectangles_input = [self.r1, self.r2]
 
+        Rectangle.save_to_file(self.list_rectangles_input)
+
+        self.list_rectangles_output = Rectangle.load_from_file()
+
+        with redirect_stdout(io.StringIO()) as str_copy:
+            print(self.list_rectangles_output[0])
+        self.assertEqual(str_copy.getvalue(), "[Rectangle] (4) 2/8 - 10/7\n")
+
+        with redirect_stdout(io.StringIO()) as str_origin:
+            print(self.list_rectangles_input[0])
+        self.assertEqual(str_origin.getvalue(), "[Rectangle] (4) 2/8 - 10/7\n")
+        self.assertEqual(str_origin.getvalue(), str_copy.getvalue())
+
+        with redirect_stdout(io.StringIO()) as str_copy:
+            print(self.list_rectangles_output[1])
+        self.assertEqual(str_copy.getvalue(), "[Rectangle] (5) 0/0 - 2/4\n")
+
+        with redirect_stdout(io.StringIO()) as str_origin:
+            print(self.list_rectangles_input[1])
+        self.assertEqual(str_origin.getvalue(), "[Rectangle] (5) 0/0 - 2/4\n")
+        self.assertEqual(str_origin.getvalue(), str_copy.getvalue())
