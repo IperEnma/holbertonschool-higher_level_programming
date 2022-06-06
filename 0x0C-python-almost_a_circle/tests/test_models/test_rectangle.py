@@ -155,5 +155,5 @@ class test_rectangle(unittest.TestCase):
                 })
         self.assertEqual(type(self.instance5.to_dictionary()), dict)
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()

@@ -121,5 +121,5 @@ class test_square(unittest.TestCase):
                 })
         self.assertEqual(type(self.instance3.to_dictionary()), dict)
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
