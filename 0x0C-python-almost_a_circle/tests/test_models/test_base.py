@@ -94,14 +94,4 @@ class TestBaseClass(unittest.TestCase):
         compare = self.r3 == self.r4
         self.assertEqual(compare, False)
 
-    def test_load_from_files(self):
-        """test create instance from files"""
-        self.r5 = Rectangle(10, 7, 2, 8)
-        self.r6 = Rectangle(2, 4)
-        self.list_rectangles_input = [self.r1, self.r2]
-
-        Rectangle.save_to_file(self.list_rectangles_input)
-
-        self.list_rectangles_output = Rectangle.load_from_file()
-
 
