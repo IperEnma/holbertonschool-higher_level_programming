@@ -127,3 +127,6 @@ class test_base(unittest.TestCase):
             print(self.list_rectangles_input[1])
         self.assertEqual(str_origin.getvalue(), "[Rectangle] (5) 0/0 - 2/4\n")
         self.assertEqual(str_origin.getvalue(), str_copy.getvalue())
+
+    if __name__ == '__main__':
+        unittest.main()
