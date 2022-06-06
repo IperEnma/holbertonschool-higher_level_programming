@@ -7,7 +7,7 @@ import unittest
 from models.rectangle import Rectangle
 
 
-class test_rectangle(unittest.TestCase):
+class test_Rectangle(unittest.TestCase):
     """class test rectangle class"""
 
     instance = Rectangle(10, 10, 10, 10, 10)
