@@ -37,6 +37,7 @@ class Rectangle(Base):
     def width(self):
         """get width"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """set width with validator"""
@@ -47,6 +48,7 @@ class Rectangle(Base):
     def height(self):
         """get height"""
         return self.__height
+
     @height.setter
     def height(self, value):
         self.validator_size("height", value)
@@ -55,6 +57,7 @@ class Rectangle(Base):
     @property
     def x(self):
         return self.__x
+
     @x.setter
     def x(self, value):
         self.validator_position("x", value)
@@ -63,6 +66,7 @@ class Rectangle(Base):
     @property
     def y(self):
         return self.__y
+
     @y.setter
     def y(self, value):
         self.validator_position("y", value)
@@ -87,7 +91,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """rewriting method __str__"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
+                - {self.__width}/{self.__height}"
 
     """update"""
 
@@ -122,4 +127,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """the dictionary representation of a Rectangle"""
-        return {'id': self.id, 'width': self.width, 'height': self.height, 'x': self.x, 'y': self.y}
+        return {'id': self.id, 'width': self.width, 'height':
+                self.height, 'x': self.x, 'y': self.y}
