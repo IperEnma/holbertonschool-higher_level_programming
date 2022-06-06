@@ -2,6 +2,7 @@
 """module with class base"""
 
 import json
+import csv
 
 
 class Base:
@@ -68,6 +69,32 @@ class Base:
 
         my_dict_string = json.dumps(my_dict)
         my_dict = cls.from_json_string(my_dict_string)
+        for dict_ in my_dict:
+            my_list.append(cls.create(**dict_))
+        return my_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+        my_list = []
+        for obj in list_objs:
+            my_list.append(cls.to_dictionary(obj))
+        with open(cls.__name__ + ".csv", 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(my_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """returns a list of instances"""
+        my_list = []
+        results = []
+        try:
+            with open(cls.__name__ + ".csv", 'r') as csvfile:
+                reader = csv.DictReader(csvfile)
+        except Exception:
+            return my_list
+
+        print(results)
         for dict_ in my_dict:
             my_list.append(cls.create(**dict_))
         return my_list
