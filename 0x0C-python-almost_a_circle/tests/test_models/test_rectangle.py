@@ -130,3 +130,10 @@ class TestRectangleClass(unittest.TestCase):
         with redirect_stdout(io.StringIO()) as buff:
             print(self.instance)
         self.assertEqual(buff.getvalue(), "[Rectangle] (89) 1/3 - 4/2\n")
+
+    def test_to_dictionary(self):
+        """test metho to_dictionary"""
+        self.assertEqual(self.instance6.to_dictionary(), {'id': 4, 'width': 2, 'height': 3, 'x': 2, 'y': 2})
+        self.assertEqual(type(self.instance6.to_dictionary()), dict)
+        self.assertEqual(self.instance5.to_dictionary(), {'id': 12, 'width': 4, 'height': 6, 'x': 2, 'y': 1})
+        self.assertEqual(type(self.instance5.to_dictionary()), dict)
