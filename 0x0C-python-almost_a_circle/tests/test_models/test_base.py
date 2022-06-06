@@ -39,7 +39,8 @@ class test_base(unittest.TestCase):
 
         with redirect_stdout(io.StringIO()) as buff:
             print(self.json_dictionary)
-        self.assertEqual(buff.getvalue(), '[{"id": 10, "width": 10, "height": 7, "x": 2, "y": 8}]\n')
+        self.assertEqual(buff.getvalue(), '[{"id": 10, "width": 10,\
+ "height": 7, "x": 2, "y": 8}]\n')
         self.assertEqual(type(buff.getvalue()), str)
 
     def test_save_to_file(self):
@@ -50,7 +51,8 @@ class test_base(unittest.TestCase):
 
         with open("Rectangle.json") as f:
             self.read = f.read()
-        self.assertEqual(self.read, '[{"id": 8, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        self.assertEqual(self.read, '[{"id": 8, "width": 10, "height": 7, "x":\
+ 2, "y": 8}, {"id": 9, "width": 2, "height": 4, "x": 0, "y": 0}]')
 
     def test_from_json_string(self):
         """checking from json string"""
@@ -67,15 +69,18 @@ class test_base(unittest.TestCase):
 
         with redirect_stdout(io.StringIO()) as _str:
             print(self.list_input)
-        self.assertEqual(_str.getvalue(), "[{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}]\n")
+        self.assertEqual(_str.getvalue(), "[{'id': 89, 'width': 10, 'height':\
+ 4}, {'id': 7, 'width': 1, 'height': 7}]\n")
 
         with redirect_stdout(io.StringIO()) as _str:
             print(self.json_list_input)
-        self.assertEqual(_str.getvalue(), '[{"id": 89, "width": 10, "height": 4}, {"id": 7, "width": 1, "height": 7}]\n')
+        self.assertEqual(_str.getvalue(), '[{"id": 89, "width": 10, "height":\
+ 4}, {"id": 7, "width": 1, "height": 7}]\n')
 
         with redirect_stdout(io.StringIO()) as _str:
             print(self.list_output)
-        self.assertEqual(_str.getvalue(), "[{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}]\n")
+        self.assertEqual(_str.getvalue(), "[{'id': 89, 'width': 10, 'height':\
+ 4}, {'id': 7, 'width': 1, 'height': 7}]\n")
 
     def test_create(self):
         """test create checking"""
