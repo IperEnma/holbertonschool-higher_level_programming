@@ -7,7 +7,7 @@ import unittest
 from models.square import Square
 
 
-class testSquare(unittest.TestCase):
+class SquareTest(unittest.TestCase):
     """class test Square class"""
 
     instance1 = Square(5)
