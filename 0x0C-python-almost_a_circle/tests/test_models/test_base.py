@@ -12,6 +12,15 @@ from models.rectangle import Rectangle
 class test_base(unittest.TestCase):
     """class test base class"""
 
+    def test_base(self):
+        """test base checking"""
+        base0 = Base(1)
+        self.assertEqual(base0.id, 1)
+        base1 = Base()
+        self.assertEqual(base1.id, 1)
+        base2 = Base()
+        self.assertEqual(base2.id, 2)
+
     def test_doc_class(self):
         """checking docstring"""
         self.assertGreater(len(Base().__doc__), 1)
