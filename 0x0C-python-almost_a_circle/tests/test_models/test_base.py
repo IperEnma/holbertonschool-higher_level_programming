@@ -9,7 +9,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 
 
-class test_base(unittest.TestCase):
+class BaseTest(unittest.TestCase):
     """class test base class"""
 
     def test_base(self):
