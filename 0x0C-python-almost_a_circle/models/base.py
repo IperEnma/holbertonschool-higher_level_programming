@@ -94,17 +94,16 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        my_list = []
+        list_objs = []
+        list_dict = []
         try:
             with open(cls.__name__ + ".csv", 'r') as csvfile:
                 reader = csv.DictReader(csvfile)
                 for dict_ in reader:
-                    print(dict_)
-                    print(type(dict_))
-                    new = cls.create(**dict_)
-                    my_list.append(new)
-                    print(my_list)
-                    print(new)
+                    for key, value in dict_.items():
+                        dict_[key] = int(value)
+                    list_objs.append(cls.create(**dict_))
         except Exception:
-            return my_list
-        return my_list
+            raise Exception()
+            return list_objs
+        return list_objs
