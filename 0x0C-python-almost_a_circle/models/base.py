@@ -77,24 +77,34 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """writes the JSON string representation of list_objs to a file"""
         my_list = []
+        fieldnames = []
         for obj in list_objs:
             my_list.append(cls.to_dictionary(obj))
-        with open(cls.__name__ + ".csv", 'w', newline='') as csvfile:
-            writer = csv.writer(csvfile)
-            writer.writerow(my_list)
+
+        for dict_ in my_list:
+            for key, value in dict_.items():
+                if key not in fieldnames:
+                    fieldnames.append(key)
+
+        with open(cls.__name__ + ".csv", 'w') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            for dict_ in my_list:
+                writer.writerow(dict_)
 
     @classmethod
     def load_from_file_csv(cls):
-        """returns a list of instances"""
         my_list = []
-        results = []
         try:
             with open(cls.__name__ + ".csv", 'r') as csvfile:
                 reader = csv.DictReader(csvfile)
+                for dict_ in reader:
+                    print(dict_)
+                    print(type(dict_))
+                    new = cls.create(**dict_)
+                    my_list.append(new)
+                    print(my_list)
+                    print(new)
         except Exception:
             return my_list
-
-        print(results)
-        for dict_ in my_dict:
-            my_list.append(cls.create(**dict_))
         return my_list
