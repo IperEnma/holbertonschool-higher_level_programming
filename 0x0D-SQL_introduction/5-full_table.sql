@@ -1,2 +1,2 @@
 -- prints the full description
-SHOW FULL TABLES;
+SHOW COLUMNS FROM first_table;
