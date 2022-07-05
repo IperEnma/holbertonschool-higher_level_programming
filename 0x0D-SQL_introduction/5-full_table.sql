@@ -1,2 +1,2 @@
 -- prints the full description
-SHOW COLUMNS;
+SHOW FULL TABLES;
