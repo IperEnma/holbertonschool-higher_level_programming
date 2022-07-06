@@ -1,0 +1,4 @@
+-- creates the database hbtn_0d_usa and the table states
+CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
+CREATE TABLE IF NO EXISTS states(id INT AUTO_INCREMENT, name VARCHAR(256) NOT NULL);
+ALTER TABLE states AUTO_INCREMENT = 1
