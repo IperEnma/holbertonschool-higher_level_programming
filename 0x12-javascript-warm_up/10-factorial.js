@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // computes and prints a factorial
 
-let number = parseInt(process.argv[2]);
+const number = parseInt(process.argv[2]);
 
 function factorial (number) {
   if (number === 1) { return (1); }
