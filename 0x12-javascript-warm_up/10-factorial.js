@@ -2,7 +2,7 @@
 // computes and prints a factorial
 
 function factorial (number, mul) {
-  if (mul == 1) { return (number); }
+  if (mul === 1) { return (number); }
   return (mul * factorial(number, mul - 1));
 }
 
