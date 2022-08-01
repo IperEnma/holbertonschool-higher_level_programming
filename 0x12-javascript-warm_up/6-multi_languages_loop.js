@@ -1,8 +1,10 @@
 #!/usr/bin/node
 // prints 3 lines
 
-let array = new Array('C is fun', 'Python is cool', 'JavaScript is amazing');
+const array = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-array.forEach(string => {
-  console.log(string);
-});
+let count = 0;
+
+for (count = 0; count < array.length; count++) {
+  console.log(array[count]);
+}
