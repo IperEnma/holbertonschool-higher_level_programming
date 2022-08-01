@@ -16,9 +16,9 @@ if (process.argv.length < 4) {
       max2 = parseInt(process.argv[i]);
     }
   }
-}
-if (Number.isInteger(max2)) {
-  console.log(max2);
-} else {
-  console.log(max);
+  if (Number.isInteger(max2)) {
+  	console.log(max2);
+  } else {
+  	console.log(max);
+  }
 }
