@@ -8,7 +8,7 @@ function factorial (number, mul) {
 
 const number = parseInt(process.argv[2]);
 
-if (Number.isInteger(number) && number > 0) {
+if (Number.isInteger(number) && number > 1) {
   console.log(factorial(number, number - 1));
 } else {
   console.log(1);
