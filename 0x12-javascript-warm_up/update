@@ -1,0 +1,4 @@
+git add .
+message = READ
+git commit -m message
+git push
