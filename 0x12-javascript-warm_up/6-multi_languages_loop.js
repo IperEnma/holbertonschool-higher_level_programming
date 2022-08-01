@@ -1,6 +1,9 @@
 #!/usr/bin/node
 // Write a script that prints 3 lines
 
-for (const string of ['C is fun', 'Python is cool', 'JavaScript is amazing']) {
-  console.log(string);
+let i = 0;
+const array = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+while (array[i]) {
+  console.log(array[i]);
+  i++;
 }
