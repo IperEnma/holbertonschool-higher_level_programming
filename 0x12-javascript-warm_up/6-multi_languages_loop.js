@@ -1,4 +1,8 @@
 #!/usr/bin/node
 // prints 3 lines
 
-console.log('C is fun\n' + 'C is fun\n' + 'JavaScript is amazing');
+const array = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+
+array.forEach(string => {
+  console.log(string);
+});
