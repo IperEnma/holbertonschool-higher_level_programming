@@ -1,15 +1,14 @@
 #!/usr/bin/node
 // computes and prints a factorial
 
-function factorial (number, mul) {
-  if (mul === 1) { return (number); }
-  return (mul * factorial(number, mul - 1));
+let number = parseInt(process.argv[2]);
+
+function factorial (number) {
+  if (number === 1) { return (1); }
+  return (number * factorial(number - 1));
 }
-
-const number = parseInt(process.argv[2]);
-
-if (Number.isInteger(number) && number > 1) {
-  console.log(factorial(number, number - 1));
+if (Number.isInteger(number) && number > 0) {
+  console.log(factorial(number));
 } else {
   console.log(1);
 }
