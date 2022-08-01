@@ -1,13 +1,12 @@
 #!/usr/bin/node
 // prints the first argument
 
-import { argv } from 'node:process';
 let count = 0;
-for (count = 0; argv[count]; count++) {
+for (count = 0; process.argv[count]; count++) {
   continue;
 }
 if (count > 2) {
-  console.log(argv[2]);
+  console.log(process.argv[2]);
 } else {
   console.log('No argument');
 }
