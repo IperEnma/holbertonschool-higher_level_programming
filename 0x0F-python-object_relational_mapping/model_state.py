@@ -2,9 +2,9 @@
 """ class definition of a State and an instance Base """
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Table, Column, BigInteger, String
-from sqlalchemy import MetaData
+from sqlalchemy import Table, Column, String
 from sqlalchemy.dialects import mysql
+
 Base = declarative_base()
 
 
