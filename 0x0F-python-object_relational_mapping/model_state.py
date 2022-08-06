@@ -18,4 +18,3 @@ class State(Base):
             unique=True
             )
     name = Column(String(128), nullable=False)
-    __table_args__ = {'mysql_charset ': ' latin1 '}
