@@ -30,6 +30,8 @@ if __name__ == '__main__':
     row_cities = cursor.fetchall()
 
     count = 0
+    if (len(row_cities) == 0):
+        print()
     for citie in row_cities:
         if (count + 1) == len(row_cities):
             print(citie[0])
