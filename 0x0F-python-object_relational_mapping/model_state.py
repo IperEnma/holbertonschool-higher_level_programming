@@ -2,7 +2,7 @@
 """ class definition of a State and an instance Base """
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Table, Column, String
+from sqlalchemy import Integer, Column, String
 
 Base = declarative_base()
 
@@ -13,7 +13,7 @@ class State(Base):
     id = Column(
             Integer,
             primary_key=True,
-            autoincrement="auto",
+            autoincrement=True,
             nullable=False,
             unique=True
             )
