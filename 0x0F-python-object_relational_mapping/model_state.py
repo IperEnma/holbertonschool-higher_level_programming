@@ -11,7 +11,6 @@ Base = declarative_base()
 class State(Base):
 
     __tablename__ = 'states'
-    charset = 'utf8'
     id = Column(
             mysql.INTEGER(11),
             primary_key=True,
