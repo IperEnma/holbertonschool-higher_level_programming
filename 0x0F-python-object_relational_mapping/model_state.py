@@ -13,8 +13,9 @@ class State(Base):
     id = Column(
             Integer,
             primary_key=True,
-            autoincrement=True,
+            autoincrement="auto",
             nullable=False,
             unique=True
             )
     name = Column(String(128), nullable=False)
+    __table_args__ = {'mysql_charset ': ' latin1 '}
