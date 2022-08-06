@@ -8,7 +8,7 @@ Base = declarative_base()
 
 
 class State(Base):
-
+    """ ORM MAPPING """
     __tablename__ = 'states'
     id = Column(
             Integer,
