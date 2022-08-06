@@ -11,7 +11,7 @@ if (__name__ == '__main__'):
             port=3306,
             user=argv[1],
             passwd=argv[2],
-            db="hbtn_0e_0_usa",
+            db=argv[3],
             charset="utf8"
             )
     cursor = conn.cursor()
