@@ -7,13 +7,21 @@ from sys import argv
 if __name__ == '__main__':
 
     try:
-        conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3], charset="utf8")
+        conn = MySQLdb.connect(
+                host="localhost",
+                port=3306,
+                user=argv[1],
+                passwd=argv[2],
+                db=argv[3],
+                charset="utf8")
     except Exception:
         print("Error conexion with database")
         exit()
     try:
         cursor = conn.cursor()
-        cursor.execute("SELECT cities.name FROM states JOIN cities ON cities.state_id=states.id WHERE states.name=%s ORDER BY cities.id", (argv[4], ))
+        cursor.execute("SELECT cities.name FROM states JOIN cities \
+                ON cities.state_id=states.id \
+                WHERE states.name=%s ORDER BY cities.id", (argv[4], ))
     except Exception:
         cursor.close()
         conn.close()
