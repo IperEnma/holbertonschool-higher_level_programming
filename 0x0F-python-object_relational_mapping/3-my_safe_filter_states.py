@@ -15,8 +15,8 @@ if (__name__ == '__main__'):
             charset="utf8"
             )
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM states WHERE name\
-            =%(state)s", {'state': argv[4]})
+    cursor.execute("SELECT * FROM states WHERE BINARY name\
+            =%(state)s ORDER BY states.id ASC", {'state': argv[4]})
     row_states = cursor.fetchall()
 
     for state in row_states:
