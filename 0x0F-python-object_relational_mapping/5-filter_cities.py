@@ -21,7 +21,7 @@ if __name__ == '__main__':
         cursor = conn.cursor()
         cursor.execute("SELECT cities.name FROM states JOIN cities \
                 ON cities.state_id=states.id \
-                WHERE states.name=%s ORDER BY cities.id", (argv[4], ))
+                WHERE states.name=%s ORDER BY cities.id ASC", (argv[4], ))
     except Exception:
         cursor.close()
         conn.close()
