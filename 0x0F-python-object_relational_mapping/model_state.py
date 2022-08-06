@@ -3,6 +3,7 @@
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Integer, Column, String
+from sqlalchemy.dialects import mysql
 
 Base = declarative_base()
 
@@ -11,7 +12,7 @@ class State(Base):
     """ ORM MAPPING """
     __tablename__ = 'states'
     id = Column(
-            Integer,
+            mysql.INTEGER(11),
             primary_key=True,
             autoincrement=True,
             nullable=False,
