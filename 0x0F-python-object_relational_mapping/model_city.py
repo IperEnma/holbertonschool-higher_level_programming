@@ -22,7 +22,7 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(
             mysql.INTEGER(11),
-            ForeignKey("state.id"),
+            ForeignKey("State.id"),
             nullable=False
             )
     __table_args__ = {'mysql_charset ': ' latin1 '}
