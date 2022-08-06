@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     if (state):
         for data in state:
-            print("{}: {}".format(data.id, data.name))
+            print("{}".format(data.id)
     else:
         print("Not found")
     session.close()
