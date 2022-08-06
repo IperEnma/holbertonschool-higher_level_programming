@@ -9,7 +9,7 @@ from model_state import Base
 
 
 class City(Base):
-
+    """definition class of city"""
     __tablename__ = 'cities'
     charset = 'utf8'
     id = Column(
