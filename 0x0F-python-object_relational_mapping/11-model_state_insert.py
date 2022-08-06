@@ -18,11 +18,11 @@ if __name__ == '__main__':
             pool_pre_ping=True,
             echo=False
             )
-    session = Session(engine)
-
     new_state = State()
     new_state.name = "Louisiana"
+
+    session = Session(engine)
     session.add(new_state)
     session.commit()
-    session.close()
     print(new_state.id)
+    session.close()
