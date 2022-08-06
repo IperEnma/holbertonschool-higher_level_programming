@@ -15,7 +15,7 @@ if __name__ == '__main__':
             )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM states WHERE name\
-            ='{}' ORDER BY id".format(argv[4]))
+            ='{}' ORDER BY id ASC".format(argv[4]))
     row_state = cursor.fetchall()
     for state in row_state:
         print(state)
