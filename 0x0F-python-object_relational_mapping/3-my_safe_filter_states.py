@@ -16,7 +16,7 @@ if (__name__ == '__main__'):
             )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM states WHERE BINARY name\
-            =%(state)s ORDER BY states.id ASC", {'state': argv[4]})
+            =%(state)s ORDER BY id ASC", {'state': argv[4]})
     row_states = cursor.fetchall()
 
     for state in row_states:
