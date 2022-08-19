@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """sends a request to the URL"""
 
-from urllib import parse, request
+from urllib import request
 import sys
 
 url = sys.argv[1]
