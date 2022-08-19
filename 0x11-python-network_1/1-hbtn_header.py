@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """sends a request to the URL"""
-
 import urllib.request
 import sys
+
 
 url = sys.argv[1]
 """values = {'X-Request-Id': sys.argv[2]}
