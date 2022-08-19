@@ -12,4 +12,4 @@ with urllib.request.urlopen(url) as response:
     """for key, value in response.info().items():
         if key == 'X-Request-Id':
             print(value)"""
-    print(response.info()['X-Request-Id'])
+    print(response.info().get('X-Request-Id'))
