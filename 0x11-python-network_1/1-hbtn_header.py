@@ -5,7 +5,7 @@ import sys
 
 
 url = sys.argv[1]
-"""values = {'X-Request-Id': sys.argv[2]}
+""" values = {'X-Request-Id': sys.argv[2]}
 data = parse.urlencode(values)
 url = url + '?' + data"""
 with urllib.request.urlopen(url) as response:
