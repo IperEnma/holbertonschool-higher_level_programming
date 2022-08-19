@@ -17,4 +17,4 @@ if __name__ == '__main__':
     elif(len(result_dict) == 0):
         print("No result")
     else:
-        print("{[]} {}".format(result_dict['id'], result_dict['name']))
+        print(result_dict)
