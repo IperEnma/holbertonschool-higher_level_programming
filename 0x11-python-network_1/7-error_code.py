@@ -13,4 +13,4 @@ if __name__ == '__main__':
         print(response.content.decode())
     except HTTPError as error:
         if(error.response.status_code >= 400):
-            print("Error code: ".format(error.response.status_code))
+            print("Error code: {}".format(error.response.status_code))
