@@ -7,8 +7,8 @@ from urllib.error import HTTPError
 if __name__ == '__main__':
     url = sys.argv[1]
     values = {'email': sys.argv[2]}
-    data = parse.urlencode(values, 'utf-8')
-    full_url = url + '?' + data
+    data = parse.urlencode(values)
+    data = data.encode('utf-8')
 
-    with request.urlopen(full_url) as response:
-        print(f.read())
+    with request.urlopen(url, data) as response:
+        print(f.read().decode('utf-8'))
