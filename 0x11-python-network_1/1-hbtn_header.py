@@ -4,12 +4,13 @@ import urllib.request
 import sys
 
 
-url = sys.argv[1]
-""" values = {'X-Request-Id': sys.argv[2]}
-data = parse.urlencode(values)
-url = url + '?' + data"""
-with urllib.request.urlopen(url) as response:
-    """for key, value in response.info().items():
-        if key == 'X-Request-Id':
-            print(value)"""
-    print(response.info().get('X-Request-Id'))
+if __name__ == '__main__':
+    url = sys.argv[1]
+    """ values = {'X-Request-Id': sys.argv[2]}
+    data = parse.urlencode(values)
+    url = url + '?' + data"""
+    with urllib.request.urlopen(url) as response:
+        """for key, value in response.info().items():
+            if key == 'X-Request-Id':
+                print(value)"""
+        print(response.info().get('X-Request-Id'))
