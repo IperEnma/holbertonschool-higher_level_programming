@@ -14,6 +14,7 @@ if __name__ == '__main__':
         if(len(response) == 0):
             print("No result")
         else:
+            if (hasattr(response, 'id') and hasattr(response, 'name)'))
             print("[{}] {}".format(response['id'], response['name']))
     except Exception as e:
         print(e)
