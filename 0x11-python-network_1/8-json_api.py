@@ -14,7 +14,6 @@ if __name__ == '__main__':
         if(len(response) == 0):
             print("No result")
         else:
-            if ('id' in response and 'name' in response):
-                print("[{}] {}".format(response['id'], response['name']))
+            print("[{}] {}".format(response['id'], response['name']))
     except Exception:
         print("Not a valid JSON")
