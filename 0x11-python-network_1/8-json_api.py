@@ -11,10 +11,9 @@ if __name__ == '__main__':
         data = {'q': ""}
     try:
         response = requests.post(url, data).json()
+        if(len(response) == 0):
+            print("No result")
+        else:
+            print("[{}] {}".format(result_dict['id'], result_dict['name']))
     except Exception:
         print("Not a valid JSON")
-        exit
-    if(len(response) == 0):
-        print("No result")
-    else:
-        print("[{}] {}".format(result_dict['id'], result_dict['name']))
