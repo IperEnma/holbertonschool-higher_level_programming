@@ -9,12 +9,12 @@ if __name__ == '__main__':
         data = {'q': argv[1]}
     else:
         data = {'q': ""}
-    response = requests.post(url, data)
-    result = response.content.decode()
-    result_dict = eval(result)
-    if(type(result_dict) != dict):
+    try:
+        response = requests.post(url, data).json()
+    except Exception:
         print("Not a valid JSON")
-    elif(len(result_dict) == 0):
+        exit
+    if(len(response) == 0):
         print("No result")
     else:
         print("[{}] {}".format(result_dict['id'], result_dict['name']))
