@@ -8,4 +8,7 @@ if __name__ == '__main__':
     token = argv[2]
     response = requests.get("https://api.github.com/user", auth=(user, token)).json()
 
-    print(response['id'])
+    try:
+        print(response['id'])
+    except Exception:
+        print(None)
