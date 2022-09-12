@@ -10,8 +10,10 @@ axios.get(url)
   .then(function (response) {
     let count = 0;
     for (let idx = 0; idx < response.data.results.length; idx++) {
-      if (response.data.results[idx].characters.indexOf('https://swapi-api.hbtn.io/api/people/18/') > -1) {
-        count += 1;
+      for (let idc = 0; idc < response.data.results[idx].characters.length; idc++) {
+        if (response.data.results[idx].characters[idc].includes('18')) {
+		  count += 1;
+        }
       }
     }
     console.log(count);
