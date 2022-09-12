@@ -12,7 +12,7 @@ axios.get(url)
     for (let idx = 0; idx < response.data.results.length; idx++) {
       for (let idc = 0; idc < response.data.results[idx].characters.length; idc++) {
         if (response.data.results[idx].characters[idc].includes('18')) {
-		  count += 1;
+          count += 1;
         }
       }
     }
