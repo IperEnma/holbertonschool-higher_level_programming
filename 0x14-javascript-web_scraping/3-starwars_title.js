@@ -3,7 +3,7 @@
 
 const axios = require('axios').default;
 
-url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 axios.get(url)
   .then(function (response) {
     // handle success
