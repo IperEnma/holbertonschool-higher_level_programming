@@ -8,9 +8,9 @@ axios.get(process.argv[2])
   .then(function (response) {
     let count = 0;
     for (let idx = 0; idx < response.data.results.length; idx++) {
-	  if (Object.values(response.data.results[idx].characters).indexOf('https://swapi-api.hbtn.io/api/people/18/') > -1) {
+      if (Object.values(response.data.results[idx].characters).indexOf('https://swapi-api.hbtn.io/api/people/18/') > -1) {
         count += 1;
-	  }
+      }
     }
     console.log(count);
   })
